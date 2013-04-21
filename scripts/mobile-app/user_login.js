@@ -7,7 +7,7 @@ $('#drupalgap_page_user_login').on('pageshow',function(){
 				  'Error',
 				  'OK'
 		  );
-		  $.mobile.changePage("dashboard.html");
+		  $.mobile.changePage("status.html");
 	  }
 	  drupalgap_form_render('user_login', '#drupalgap_page_user_login .content');
   }

@@ -5,52 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FlyCatcha.com</title>
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css">
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-<script type="text/javascript" src="scripts/turnjs/turn.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+<!-- <script type="text/javascript" charset="utf-8" src="scripts/mobile-app/user_login.js"></script> -->
+
 <link rel="stylesheet" href="style.css">
-<style type="text/css">  
-body{
-	background:#ccc;
-}
-#magazine{
-	width:576px;
-	height:752px;
-}
-#magazine .turn-page{
-	background-color:#ccc;
-	background-size:100% 100%;
-}
-</style>
- 
-<script type="text/javascript">
-var j = jQuery.noConflict();
-	j(window).ready(function() {
-		j('#magazine').turn({
-			display: 'single',
-			acceleration: true,
-			gradients: !j.isTouch,
-			elevation:50,
-			when: {
-				turned: function(e, page) {
-					/*console.log('Current view: ', j(this).turn('view'));*/
-				}
-			}
-		});
-	});
-	j(window).bind('keydown', function(e){
-		if (e.keyCode==37)
-			j('#magazine').turn('previous');
-		else if (e.keyCode==39)
-			j('#magazine').turn('next');	
-	});
-</script>
 </head>
 <body>
 
 <!-- Start of first page -->
-<div data-role="page" id="grid">
-
+<div data-role="page" id="login">
+<script src="scripts/login.js"></script>
 	<div data-role="popup" id="popupMenu" data-theme="d">
         <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
             <li data-role="divider" data-theme="a">Menu</li>
@@ -86,21 +51,19 @@ var j = jQuery.noConflict();
     
   </div>
   <!-- /header -->
+
   
   <div data-role="content">
-   
-   <div id="magazine">
-	<div style="background-image:url(scripts/turnjs/demos/magazine_single/pages/01.jpg);"></div>
-	<div style="background-image:url(scripts/turnjs/demos/magazine_single/pages/02.jpg);"></div>
-	<div style="background-image:url(scripts/turnjs/demos/magazine_single/pages/03.jpg);"></div>
-	<div style="background-image:url(scripts/turnjs/demos/magazine_single/pages/04.jpg);"></div>
-	<div style="background-image:url(scripts/turnjs/demos/magazine_single/pages/05.jpg);"></div>
-	<div style="background-image:url(scripts/turnjs/demos/magazine_single/pages/06.jpg);"></div>
-	</div>
-
-
-   
-   
+	<form>
+		<label for="username">Username:</label>
+		<input type="text" name="username" id="username" value="">
+		
+		<label for="password">Password:</label>
+		<input type="password" name="password" id="password" value="">
+		
+		<a href="#" data-role="button" data-theme="a" class="login">Login</a>
+		<a href="register.html" data-role="button" data-theme="a" data-ajax="false">Register new account</a>
+	</form>
   </div>
   <!-- /content -->
   
