@@ -14,7 +14,7 @@ var uid;
       },
       success: function (data) {	
 		uid = data.user.uid;
-		
+		//alert(uid);
     }
 	});
   }//End try block

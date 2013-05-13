@@ -27,24 +27,38 @@
 <body>
 <!-- Start of first page -->
 <div data-role="page" id="grid">
+	<link rel="stylesheet" type="text/css" href="typicons_kit/css/typicons.css"/>
 	<div data-role="popup" id="popupMenu" data-theme="d">
         <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
             <li data-role="divider" data-theme="a">Menu</li>
             <li><a href="about.html">About</a></li>
-			<li><a href="contact.html">Contact</a></li>
+			<li><a href="messages.html">Messages</a></li>
+			<li><a href="members.html">Members</a></li>
+			<li><a href="friends.html">Friends</a></li>
+			<li><a href="mailto:contactus@flycatcha.com">Contact</a></li>
 			<li><a href="news.html">News</a> </li>
 			<li><a href="privacy-policy.html">Privacy Policy</a> </li>
 			<li><a href="settings.html">Settings</a> </li> 
+			<li><a href="logout.html">Logout</a> </li> 
+        </ul>
+	</div>
+	<!-- popup-->
+  
+	<div data-role="popup" id="camerapopupMenu" data-theme="d">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+            <li data-role="divider" data-theme="a">Menu</li>
+            <li><a href="#" onclick="takePhoto();">Upload From Camera</a></li>
+			<li><a href="#" onclick="takePhotoFromLibrary();">Upload Memory</a></li>
         </ul>
 	</div>
 	<!-- popup-->
   
   <div data-role="header" data-position="fixed"> 
     <!--<a href="#" data-icon="home">Home</a>-->
-    <div align="center"><img src="images/logo-white.png" width="200" height="75"/></div>
+    <div align="center"><img src="images/logo-white.png" width="150" height="50"/></div>
     <!--<a href="#" data-icon="bars">Menu</a>-->
-    <div style="background-color:white; padding-top: 5px;" align="center">
-      <table width="100%" border="0" align="center">
+    <div align="center">
+      <!-- <table width="100%" border="0" align="center">
         <tr>
           <td style="text-align: center"><a href="store.html"><img src="images/btns/status.png" width="25" height="25"></a></td>
           <td style="text-align: center"><a href="status.html"><img src="images/btns/star.png" width="25" height="25"></a></td>
@@ -54,7 +68,18 @@
           <td style="text-align: center"><a href="#popupMenu" data-rel="popup" data-transition="slideup"><img src="images/btns/menu.png" width="25" height="25"></a>
 		  </td>
         </tr>
-      </table>
+      </table> -->
+      
+      <div class="menu-wrapper">
+      <ul class="menu">
+      	<a href="store.html"><li class="typicn power" data-title="power"></li></a>
+      	<a href="status.html"><li class="typicn chat"></li></a>
+      	<a href="#camerapopupMenu" data-rel="popup" data-transition="slideup"><li class="typicn camera"></li></a>
+      	<a href="profile.html"><li class="typicn user"></li></a>
+      	<a href="uploads.html"><li class="typicn group"></li></a>
+      	<a href="#popupMenu" data-rel="popup" data-transition="slideup"><li class="typicn list"></li></a>
+      </ul>
+      </div>
       
       <!--<img src="images/mobile-nav.png" width="300" height="35">--> 
     </div>
@@ -68,34 +93,18 @@
  <div data-role="content">  
 <div id="MainContent">
 
-	<!--<div class="page-content">
-		<h1>PhotoSwipe</h1>
-	</div>
-	-->
-	  
-	<ul id="Gallery" class="gallery">
+	<div class="page-content">
+		<h1>Photo Upload</h1>
 		
-		<li><a href="scripts/photoswipe/examples/images/full/001.jpg"><img src="scripts/photoswipe/examples/images/thumb/001.jpg" alt="Image 001" /></a></li>
-		<li><a href="scripts/photoswipe/examples/images/full/002.jpg"><img src="scripts/photoswipe/examples/images/thumb/002.jpg" alt="Image 002" /></a></li>
-		<li><a href="scripts/photoswipe/examples/images/full/003.jpg"><img src="scripts/photoswipe/examples/images/thumb/003.jpg" alt="Image 003" /></a></li>
-		<li><a href="scripts/photoswipe/examples/images/full/004.jpg"><img src="scripts/photoswipe/examples/images/thumb/004.jpg" alt="Image 004" /></a></li>
-		<li><a href="scripts/photoswipe/examples/images/full/005.jpg"><img src="scripts/photoswipe/examples/images/thumb/005.jpg" alt="Image 005" /></a></li>
-		<li><a href="scripts/photoswipe/examples/images/full/006.jpg"><img src="scripts/photoswipe/examples/images/thumb/006.jpg" alt="Image 006" /></a></li>
-		<li><a href="scripts/photoswipe/examples/images/full/007.jpg"><img src="scripts/photoswipe/examples/images/thumb/007.jpg" alt="Image 007" /></a></li>
-		<li><a href="scripts/photoswipe/examples/images/full/008.jpg"><img src="scripts/photoswipe/examples/images/thumb/008.jpg" alt="Image 008" /></a></li>
-		<li><a href="scripts/photoswipe/examples/images/full/009.jpg"><img src="scripts/photoswipe/examples/images/thumb/009.jpg" alt="Image 009" /></a></li>
-		<li><a href="scripts/photoswipe/examples/images/full/010.jpg"><img src="scripts/photoswipe/examples/images/thumb/010.jpg" alt="Image 010" /></a></li>
-		<li><a href="scripts/photoswipe/examples/images/full/011.jpg"><img src="scripts/photoswipe/examples/images/thumb/011.jpg" alt="Image 011" /></a></li>
-		<li><a href="scripts/photoswipe/examples/images/full/012.jpg"><img src="scripts/photoswipe/examples/images/thumb/012.jpg" alt="Image 012" /></a></li>
-		<li><a href="scripts/photoswipe/examples/images/full/013.jpg"><img src="scripts/photoswipe/examples/images/thumb/013.jpg" alt="Image 013" /></a></li>
-		<li><a href="scripts/photoswipe/examples/images/full/014.jpg"><img src="scripts/photoswipe/examples/images/thumb/014.jpg" alt="Image 014" /></a></li>
-		<li><a href="scripts/photoswipe/examples/images/full/015.jpg"><img src="scripts/photoswipe/examples/images/thumb/015.jpg" alt="Image 015" /></a></li>
-		<li><a href="scripts/photoswipe/examples/images/full/016.jpg"><img src="scripts/photoswipe/examples/images/thumb/016.jpg" alt="Image 016" /></a></li>
-		<li><a href="scripts/photoswipe/examples/images/full/017.jpg"><img src="scripts/photoswipe/examples/images/thumb/017.jpg" alt="Image 017" /></a></li>
-		<li><a href="scripts/photoswipe/examples/images/full/018.jpg"><img src="scripts/photoswipe/examples/images/thumb/018.jpg" alt="Image 018" /></a></li>
+		<label for="text-basic">Title</label>
+		<input type="text" name="text-basic" id="text-basic" value="">
 		
-	</ul>
-	
+		<label for="file">File:</label>
+		<input type="file" name="file" id="file" value="">
+		
+		<a href="#" data-role="button" data-theme="a" class="upload">Upload Photo</a>
+		
+	</div>	
 </div>	
   </div>
   <!-- /content -->

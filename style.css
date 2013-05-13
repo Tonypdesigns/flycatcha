@@ -1,22 +1,140 @@
 @charset "utf-8";
 /* CSS Document */
+#navlist {
+	position: relative;
+	height: 35px;
+}
+#navlist li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: relative;
+	top: 0;
+}
+#navlist li, #navlist a {
+	height: 44px;
+	display: block;
+}
 
+#home {
+	left: 0px;
+	width: 46px;
+}
+#home {
+	background: url('images/mobile-nav.png') 0 0;
+}
 
-#navlist{position:relative; height: 35px;}
-#navlist li{margin:0;padding:0;list-style:none;position:relative;top:0;}
-#navlist li, #navlist a{height:44px;display:block;}
+#prev {
+	left: 63px;
+	width: 43px;
+}
+#prev {
+	background: url('images/mobile-nav.png') -47px 0;
+}
 
-#home{left:0px;width:46px;}
-#home{background:url('images/mobile-nav.png') 0 0;}
-
-#prev{left:63px;width:43px;}
-#prev{background:url('images/mobile-nav.png') -47px 0;}
-
-#next{left:129px;width:43px;}
-#next{background:url('images/mobile-nav.png') -91px 0;}
-
+#next {
+	left: 129px;
+	width: 43px;
+}
+#next {
+	background: url('images/mobile-nav.png') -91px 0;
+}
 
 /* UI */
-.ui-footer, .ui-header{
+.ui-footer, .ui-header {
 	background: black
 }
+
+/*FRIENDS LIST*/
+.friends .friend {
+	width: 50%;
+	height: 100px;
+	padding: 5px;
+	border: 1px solid #ccc;
+	text-align: center;
+	font-weight: bold;
+	text-transform: capitalize;
+}
+
+/*UPLOADS*/
+.gallery li a {
+	border: none !important;
+}
+
+/*PROFILE*/
+.profile {
+	background-size: 100% 100%;
+	background-image: url('images/profile-book.png');
+	min-height: 450px;
+	width: 100%;
+	padding-top: 30px;
+	margin-bottom: 30px;
+}
+.profile h2 {
+	text-transform: uppercase;
+	color: red;
+	line-height: 5px;
+}
+
+#ribbon {
+	position: absolute;
+	z-index: 1;
+	margin-top: 30px;
+	left: -10px;
+}
+#ribbon img {
+	height: 600px;
+	width: 40px;
+}
+.friend-name {
+	font-size: small;
+	padding: 5px;
+	font-weight: bold;
+}
+
+.user-points {
+	font-size: medium;
+	font-weight: bold;
+	vertical-align: middle;
+}
+
+.user-points span {
+	vertical-align: top;
+	line-height: 75px;
+}
+
+/*MENU*/
+.menu-wrapper{
+	background: black;
+	display:table;
+	margin: 0 auto;
+	padding-bottom: 1px;
+}
+.menu {
+	display:inline;
+	
+}
+.menu li {
+	list-style: none;
+	float: left;
+	font-size: 24px;
+	font-weight: normal;
+	padding: 0 10px 5px 10px;
+}
+.menu a{
+	color: white !important;
+	text-decoration:none;
+}
+.menu a:hover{
+	color: red !important;
+	text-decoration: none;
+}
+
+/*BUTTONS*/
+/*.ui-btn {
+	background:black !important;
+}
+
+.ui-btn a:hover{
+	background:red !important;
+}*/

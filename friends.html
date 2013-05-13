@@ -15,25 +15,40 @@
 
 <!-- Start of first page -->
 <div data-role="page" id="grid">
-
+	<link rel="stylesheet" type="text/css" href="typicons_kit/css/typicons.css"/>
+	<script src="scripts/friends.js"></script>
+	<script src="scripts/main.js"></script>
 	<div data-role="popup" id="popupMenu" data-theme="d">
         <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
             <li data-role="divider" data-theme="a">Menu</li>
             <li><a href="about.html">About</a></li>
-			<li><a href="contact.html">Contact</a></li>
+			<li><a href="messages.html">Messages</a></li>
+			<li><a href="members.html">Members</a></li>
+			<li><a href="friends.html">Friends</a></li>
+			<li><a href="mailto:contactus@flycatcha.com">Contact</a></li>
 			<li><a href="news.html">News</a> </li>
 			<li><a href="privacy-policy.html">Privacy Policy</a> </li>
 			<li><a href="settings.html">Settings</a> </li> 
+			<li><a href="logout.html">Logout</a> </li> 
+        </ul>
+	</div>
+	<!-- popup-->
+  
+	<div data-role="popup" id="camerapopupMenu" data-theme="d">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+            <li data-role="divider" data-theme="a">Menu</li>
+            <li><a href="#" onclick="takePhoto();">Upload From Camera</a></li>
+			<li><a href="#" onclick="takePhotoFromLibrary();">Upload Memory</a></li>
         </ul>
 	</div>
 	<!-- popup-->
   
   <div data-role="header" data-position="fixed"> 
     <!--<a href="#" data-icon="home">Home</a>-->
-    <div align="center"><img src="images/logo-white.png" width="200" height="75"/></div>
+    <div align="center"><img src="images/logo-white.png" width="150" height="50"/></div>
     <!--<a href="#" data-icon="bars">Menu</a>-->
-    <div style="background-color:white; padding-top: 5px;" align="center">
-      <table width="100%" border="0" align="center">
+    <div align="center">
+      <!-- <table width="100%" border="0" align="center">
         <tr>
           <td style="text-align: center"><a href="store.html"><img src="images/btns/status.png" width="25" height="25"></a></td>
           <td style="text-align: center"><a href="status.html"><img src="images/btns/star.png" width="25" height="25"></a></td>
@@ -43,7 +58,18 @@
           <td style="text-align: center"><a href="#popupMenu" data-rel="popup" data-transition="slideup"><img src="images/btns/menu.png" width="25" height="25"></a>
 		  </td>
         </tr>
-      </table>
+      </table> -->
+      
+      <div class="menu-wrapper">
+      <ul class="menu">
+      	<a href="store.html"><li class="typicn power" data-title="power"></li></a>
+      	<a href="status.html"><li class="typicn chat"></li></a>
+      	<a href="#camerapopupMenu" data-rel="popup" data-transition="slideup"><li class="typicn camera"></li></a>
+      	<a href="profile.html"><li class="typicn user"></li></a>
+      	<a href="uploads.html"><li class="typicn group"></li></a>
+      	<a href="#popupMenu" data-rel="popup" data-transition="slideup"><li class="typicn list"></li></a>
+      </ul>
+      </div>
       
       <!--<img src="images/mobile-nav.png" width="300" height="35">--> 
     </div>
@@ -51,16 +77,11 @@
     
   </div>
   <!-- /header -->
-
-
   
   <div data-role="content">
-    <ul data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search cars...">
-    <li><a href="#">User 1</a></li>
-    <li><a href="#">User 2</a></li>
-    <li><a href="#">User 3</a></li>
-</ul>
-  </div>
+  <h1>Friends</h1>
+	<table class="friends"></table>
+</div>
   <!-- /content -->
   
   <div data-role="footer">

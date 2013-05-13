@@ -1,62 +1,20 @@
 
 $(document).ready(function () {
-
-     // Called when capture operation is finished
-    //
-    function captureSuccess(mediaFiles) {
-        var i, len;
-        for (i = 0, len = mediaFiles.length; i < len; i += 1) {
-            uploadFile(mediaFiles[i]);
-        }       
-    }
-
-    // Called if something bad happens.
-    // 
-    function captureError(error) {
-        var msg = 'An error occurred during capture: ' + error.code;
-        navigator.notification.alert(msg, null, 'Uh oh!');
-    }
-
-    // A button will call this function
-    //
-    function captureImage() {
-        // Launch device camera application, 
-        // allowing user to capture up to 2 images
-        navigator.device.capture.captureImage(captureSuccess, captureError, {limit: 2});
-    }
-
-    // Upload files to server
-    function uploadFile(mediaFile) {
-        var ft = new FileTransfer(),
-            path = mediaFile.fullPath,
-            name = mediaFile.name;
-
-        ft.upload(path,
-            "http://my.domain.com/upload.php",
-            function(result) {
-                console.log('Upload success: ' + result.responseCode);
-                console.log(result.bytesSent + ' bytes sent');
-            },
-            function(error) {
-                console.log('Error uploading file ' + path + ': ' + error.code);
-            },
-            { fileName: name });   
-    }
- 
-
-
 	var image_id;
+	var title;
+	var body;
+	var image;
+	var status="";
+	var nid;
+	var uid;
 	
 	/*UPLOAD IMAGE*/
+	/* 
 	$("#image").change(function (){
 	   var img_num = Math.floor((Math.random()*100000)+1);
        var fileName = 'fc-user-upload-'+ img_num;
 	   var file = btoa(fileName);
 	   var filepath = 'public://'+fileName;
-	   /*alert(fileName);
-	   alert(file);
-	   alert(filepath);
-	   //alert();*/
 	   $.ajax({
 			async: false,
 			type: "POST",
@@ -75,8 +33,85 @@ $(document).ready(function () {
 			},
 		});
        //$(".filename").html(fileName);
-     });
+     }); 
+	 */
+		
+	//STORE USER SESSION	
+	$.ajax({
+		  url: "http://flycatcha.com/rest/system/connect.json",
+		  type: 'post',
+		  dataType: 'json',
+		  async: false,
+		  error: function (XMLHttpRequest, textStatus, errorThrown) {
+			alert('page_dashboard - failed to system connect');
+			console.log(JSON.stringify(XMLHttpRequest));
+			console.log(JSON.stringify(textStatus));
+			console.log(JSON.stringify(errorThrown));
+		  },
+		  success: function (data) {	
+			uid = data.user.uid;
+			//alert(uid);
+		}
+		});	
+	 
+	//RETREIVE ALL STATUS POSTS
+	$.ajax({
+			async: false,
+			type: "get",
+			url: "http://www.flycatcha.com/rest/status/",
+			error: function(XMLHttpRequest, textStatus, errorThrown) {
+				alert(errorThrown);
+				console.log(JSON.stringify(XMLHttpRequest));
+				console.log(JSON.stringify(textStatus));
+				console.log(JSON.stringify(errorThrown));
+			},
+			success: function(data){	
+				for(var i = 0; i<=4; i++){
+					// FORMAT DATE
+					pubDate = data.nodes[i].node.created;
+					title = data.nodes[i].node.title;
+					body = data.nodes[i].node.body;
+					image = data.nodes[i].node.image;
+					author = data.nodes[i].node.author;
+					nid = data.nodes[i].node.nid;
+					// ONLY ALLOW AUTHOR TO DELETE THEIR OWN POSTS
+					if(author==uid){status += "<h2>"+title+"</h2>"+"<p>"+pubDate+"</p>"+"<p>"+body+"</p>"+"<img src='"+image+"' width='100%'/>"+
+					"<p><a href='#' class='delete'"+" id='"+nid+"'>"+"Delete</a></p>";}
+					else{status += "<h2>"+title+"</h2>"+"<p>"+pubDate+"</p>"+"<p>"+body+"</p>"+"<img src='"+image+"' width='100%'/>";}
+				
+					//alert(author);
+					//status += "<h2>"+title+"</h2>"+"<p>"+pubDate+"</p>"+"<p>"+body+"</p>"+"<img src='"+image+"' width='100%'/>";
+				}//End for loop
+				$('.post').append(status);
+			}, 
+		}); 
+	// END RETREIVE STATUS POSTS	 
 	
+	
+	 //DELETE STATUS POSTS
+	$('.delete').click(function(){
+		var post_id = $(this).attr('id');
+		if(confirm("Are you sure you would like to delete this status update")){
+		$.ajax({
+		  url: "http://flycatcha.com/rest/node/"+post_id,
+		  type: 'delete',
+		  dataType: 'json',
+		  async: false,
+		  error: function (XMLHttpRequest, textStatus, errorThrown) {
+			alert('page_dashboard - failed to system connect');
+			console.log(JSON.stringify(XMLHttpRequest));
+			console.log(JSON.stringify(textStatus));
+			console.log(JSON.stringify(errorThrown));
+		  },
+		  success: function (data) {	
+			alert('Status post deleted successfully');
+			//Refreshes current page
+			refreshPage();
+			}//End success
+		});	//End ajax call
+		}//End if statement
+	});
+	// END DELETE STATUS POSTS
 	
 	/*CREATE STATUS UPDATE*/
 	$(".status").click(function () {
@@ -109,7 +144,6 @@ $(document).ready(function () {
 			},
 		});
 	});//End login btn
-	return false;
 });//End ready function
 
 
