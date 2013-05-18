@@ -51,7 +51,7 @@ $(document).ready(function () {
 			 var formatted_date = month+' '+date+', '+year+' '+hour+':'+minutes+" "+ampm;
 			$("<hr><h2>"+value.subject+"</h2><p>"+formatted_date+"</p>"+
 			//"<a href='#' id='"+value.thread_id+"' class='reply'>Reply</a> | "+
-			"<a href='#' id='"+value.thread_id+"' class='delete'>Delete</a><br>").appendTo('.messages');
+			"<a href='#' id='"+value.thread_id+"' class='delete-message'>Delete</a><br>").appendTo('.messages');
 		});//End loop
 		}//End success
 	}); //End ajax call
@@ -61,7 +61,7 @@ $(document).ready(function () {
 	
 	
 	// DELETE MESSAGE
-	$('.delete').click(function(){
+	$('.delete-message').click(function(){
 		if(confirm('Are you sure you would like to delete this message')){
 			tid= $(this).attr('id');
 			//alert(tid);

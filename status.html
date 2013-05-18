@@ -16,7 +16,7 @@
 <link rel="stylesheet" type="text/css" href="typicons_kit/css/typicons.css"/>
 			<script src="scripts/main.js"></script>
 			<script src="scripts/status.js"></script>
-			<script src="scripts/file-transfer.js"></script>
+			<!--<script src="scripts/file-transfer.js"></script>-->
 			<!-- <script src="scripts/camera.js"></script> -->
 			<div data-role="popup" id="popupMenu" data-theme="d">
 				<ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
@@ -99,25 +99,9 @@
   <!-- /header -->
 
 			<div data-role="content">
-
-					<!--Update Status-->
-					<!--<label for="status">Status Update: </label>
-					<input type="text" name="status" id="status_update" value="">
-
-					<label for="file">Image Upload:</label>
-					<button onclick="capturePhoto();">Capture Photo</button>
-
-					<a href="#" data-role="button" data-theme="a" class='status'>Update status</a>
-					<!--End Update Status-->
-					
-					<button onclick="takePhoto();">Capture Photo</button> <br>
-					<button onclick="libraryPhoto();">Photo From Library</button>
-				    <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
-    				<img style="display:none;" id="largeImage" src="" />
-			
-			
-			<img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
-    		<img style="display:none;" id="largeImage" src="" />
+				<label for="text-basic">Status:</label>
+				<input type="text" name="text-basic" id="status_update" value="">
+				<a href="#" data-role="button" class="status">Post Status</a>
     
 				<!-- STATUS POSTS -->
 				<div class="post"></div>

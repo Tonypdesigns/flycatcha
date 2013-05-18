@@ -105,29 +105,31 @@
 
 /*MENU*/
 .menu-wrapper{
-	background: black;
-	display:table;
-	margin: 0 auto;
-	padding-bottom: 1px;
+	background-color:red;
 }
 .menu {
 	display:inline;
+	display:table;
+	margin: 0 auto;
+	padding-bottom: 1px;
 	
 }
 .menu li {
 	list-style: none;
 	float: left;
-	font-size: 24px;
+	font-size: 22px;
 	font-weight: normal;
-	padding: 0 10px 5px 10px;
+	padding: 10px 10px 5px 10px;
 }
 .menu a{
 	color: white !important;
 	text-decoration:none;
+	font-weight: normal;
 }
 .menu a:hover{
-	color: red !important;
+	color: black !important;
 	text-decoration: none;
+	font-weight: normal;
 }
 
 /*BUTTONS*/
