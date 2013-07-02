@@ -64,7 +64,6 @@
 /*PROFILE*/
 .profile {
 	background-size: 100% 100%;
-	background-image: url('images/profile-book.png');
 	min-height: 450px;
 	width: 100%;
 	padding-top: 30px;
@@ -75,18 +74,56 @@
 	color: red;
 	line-height: 5px;
 }
-
-#ribbon {
+.profile-image{
+	display:inline-block;
+	width: 40%; 
+}
+.profile-info {
+	width: 50%;
+	display: inline-block;
+	vertical-align: top;	
+}
+.username{
+	text-transform:uppercase;
+	font-weight: bold;
+}
+.country{
+	text-transform:uppercase;
+}
+.user-data{
+	border: 1px solid black;
+	display: inline-block;
+	padding: 5px;
+	margin: 10px 0 10px 0;
+}
+.edit-profile{
+	margin-left: 10px;
+}
+.uploads img, .top-friends img{
+	display:inline;
+	margin-right: 10px;
+	border: 1px solid #ff000;
+	border-radius: 10px;
+}
+.uploads, .top-friends{
+	width: 100%;
+	overflow:auto;
+	overflow-y: hidden;
+	white-space: nowrap;
+	margin-top: 10px;
+}
+/* #ribbon {
 	position: absolute;
 	z-index: 1;
 	margin-top: 30px;
-	left: -10px;
+	left: -10px;			
 }
 #ribbon img {
 	height: 600px;
 	width: 40px;
 }
-.friend-name {
+ */
+ .friend-name {
 	font-size: small;
 	padding: 5px;
 	font-weight: bold;
@@ -105,21 +142,22 @@
 
 /*MENU*/
 .menu-wrapper{
-	background-color:red;
+	background-color:#c10404;
 }
 .menu {
-	display:inline;
-	display:table;
-	margin: 0 auto;
+	margin: 10px 0 0 0; 
 	padding-bottom: 1px;
-	
+	padding-left: 0;
+	height: 45px;
 }
 .menu li {
 	list-style: none;
 	float: left;
-	font-size: 22px;
+	font-size: 24px;
 	font-weight: normal;
-	padding: 10px 10px 5px 10px;
+	padding: 10px 0px;
+	display: table-cell;
+	width: 16.6%;
 }
 .menu a{
 	color: white !important;
@@ -130,13 +168,142 @@
 	color: black !important;
 	text-decoration: none;
 	font-weight: normal;
+	margin: 0; 
+	padding: 0;
 }
 
-/*BUTTONS*/
-/*.ui-btn {
-	background:black !important;
+/*POPUP*/
+.ui-popup {
+position: relative;
+top: 80px; 
+/*left: 50%*/
 }
 
-.ui-btn a:hover{
-	background:red !important;
-}*/
+/*TYPICONS*/
+@font-face {
+  font-family: 'typicons';
+  src: url("typicons20/font/typicons.eot");
+  src: url("typicons20/font/typicons.eot?#iefix") format('embedded-opentype'),
+       url("typicons20/font/typicons.woff") format('woff'),
+       url("typicons20/font/typicons.ttf") format('truetype'),
+       url("typicons20/font/typicons.svg#typicons") format('svg');
+  font-weight: normal;	
+  font-style: normal;
+}
+
+.ui-btn-icon-right > .ui-btn-inner > .ui-icon {
+	position: absolute;
+	top: 50%;
+	margin-top: -9px;
+	display: none;
+}
+
+/*ICON MOON*/
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot');
+	src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.woff') format('woff'),
+		url('fonts/icomoon.ttf') format('truetype'),
+		url('fonts/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+/*[data-icon]:before {
+	font-family: 'icomoon';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"] {
+*/
+.icon-camera, .icon-cart, .icon-user, .icon-images, .icon-home{
+	position: relative;
+	top: -35px;
+} 
+a .icon-search, a .icon-list{
+	color: gold;
+}
+.icon-camera, .icon-cart, .icon-user, .icon-list, .icon-images, .icon-home, .icon-search, .icon-spinner, .icon-heart, .icon-thumbs-up, .icon-mail, .icon-remove, .icon-redo, .icon-pencil {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	font-size: 22px; 
+	width: 15%;
+	display: inline-block;	
+}
+.icon-camera:before {
+	content: "\e000";
+}
+.icon-cart:before {
+	content: "\e001";
+}
+.icon-user:before {
+	content: "\e006";
+}
+.icon-list:before {
+	content: "\e004";
+}
+.icon-images:before {
+	content: "\e005";
+}
+.icon-home:before {
+	content: "\e003";
+}
+.icon-search:before {
+	content: "\e002";
+}
+.icon-spinner:before {
+	content: "\e007";
+}
+.icon-heart:before {
+	content: "\e008";
+}
+.icon-thumbs-up:before {
+	content: "\e009";
+}
+.icon-mail:before {
+	content: "\e00a";
+}
+.icon-remove:before {
+	content: "\e00b";
+}
+.icon-redo:before {
+	content: "\e00c";
+}
+.icon-pencil:before {
+	content: "\e00d";
+}
+
+
+/*LINKS*/
+a{color:black}
+a:hover{color:red;}
+.status-btns a{font-size: 24px; margin-right: 15px;color:black;}
+.status-btns a:hover{color:#C10404;}
+.message-actions a{font-size: 24px; margin-right: 15px;}
+a:hover .icon-spinner, a:hover .icon-search, a:hover .icon-list{color:red !important;}
+a .icon-camera, a .icon-cart, a .icon-user, a .icon-images, a .icon-home
+{
+	/* border-right: 1px solid gold; */
+}
+/*PANEL*/
+#panelMenu, #fcMenu {
+	background: black;
+}

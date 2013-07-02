@@ -6,76 +6,65 @@
 <title>FlyCatcha.com</title>
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css">
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<!-- The script below can be omitted -->
-<script src="/resources/turnOffPushState.js"></script>
 <script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
 <link rel="stylesheet" href="style.css">
-</head>
+<script type="text/javascript" charset="utf-8" src="cordova-2.6.0.js"></script>
+<script type="text/javascript" charset="utf-8" src="scripts/camera.js"></script>
+<script src="scripts/file-transfer.js"></script>
+<link rel="stylesheet" type="text/css" href="css/flycatcha.min.css"/>
 <body>
 
-<!-- Start of first page -->
-<div data-role="page" id="grid">
-<link rel="stylesheet" type="text/css" href="typicons_kit/css/typicons.css"/>
-	<div data-role="popup" id="popupMenu" data-theme="d">
-        <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
-            <li data-role="divider" data-theme="a">Menu</li>
-            <li><a href="about.html">About</a></li>
-			<li><a href="messages.html">Messages</a></li>
-			<li><a href="members.html">Members</a></li>
-			<li><a href="friends.html">Friends</a></li>
-			<li><a href="mailto:contactus@flycatcha.com">Contact</a></li>
-			<li><a href="news.html">News</a> </li>
-			<li><a href="privacy-policy.html">Privacy Policy</a> </li>
-			<li><a href="settings.html">Settings</a> </li> 
-			<li><a href="logout.html">Logout</a> </li> 
-        </ul>
-	</div>
-	<!-- popup-->
-  
-	<div data-role="popup" id="camerapopupMenu" data-theme="d">
-        <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
-            <li data-role="divider" data-theme="a">Menu</li>
-            <li><a href="#" onclick="takePhoto();">Upload From Camera</a></li>
-			<li><a href="#" onclick="takePhotoFromLibrary();">Upload Memory</a></li>
-        </ul>
-	</div>
-	<!-- popup-->
-  
-  <div data-role="header" data-position="fixed"> 
-    <!--<a href="#" data-icon="home">Home</a>-->
-    <div align="center"><img src="images/logo-white.png" width="150" height="50"/></div>
-    <!--<a href="#" data-icon="bars">Menu</a>-->
-    <div align="center">
-      <!-- <table width="100%" border="0" align="center">
-        <tr>
-          <td style="text-align: center"><a href="store.html"><img src="images/btns/status.png" width="25" height="25"></a></td>
-          <td style="text-align: center"><a href="status.html"><img src="images/btns/star.png" width="25" height="25"></a></td>
-          <td style="text-align: center"><a href="photos.html"><img src="images/btns/camera.png" width="25" height="25"></a></td>
-          <td style="text-align: center"><a href="index.html"><img src="images/btns/smiley.png" width="25" height="25"></a></td>
-          <td style="text-align: center"><a href="uploads.html"><img src="images/btns/upload.png" width="25" height="25"></a></td>
-          <td style="text-align: center"><a href="#popupMenu" data-rel="popup" data-transition="slideup"><img src="images/btns/menu.png" width="25" height="25"></a>
-		  </td>
-        </tr>
-      </table> -->
-      
-      <div class="menu-wrapper">
-      <ul class="menu">
-      	<a href="store.html"><li class="typicn power" data-title="power"></li></a>
-      	<a href="status.html"><li class="typicn chat"></li></a>
-      	<a href="#camerapopupMenu" data-rel="popup" data-transition="slideup"><li class="typicn camera"></li></a>
-      	<a href="profile.html"><li class="typicn user"></li></a>
-      	<a href="uploads.html"><li class="typicn group"></li></a>
-      	<a href="#popupMenu" data-rel="popup" data-transition="slideup"><li class="typicn list"></li></a>
-      </ul>
-      </div>
-      
-      <!--<img src="images/mobile-nav.png" width="300" height="35">--> 
-    </div>
-    <!-- /navbar --> 
-    
-  </div>
-  <!-- /header -->
+<!-- HEADER -->
+<div data-role="page" id="login">
+<script src="scripts/login.js"></script>
 
+<!-- MAIN MENU -->
+<div data-role="panel" id="panelMenu" data-theme="d" data-position="right">
+<div data-role="controlgroup">		
+		<a href="about.html" data-role="button">About</a>
+		<a href="messages.html" data-role="button">Messages</a>
+		<a href="members.html" data-role="button">Members</a>
+		<a href="friends.html" data-role="button">Friends</a>
+		<a href="mailto:contactus@flycatcha.com" data-role="button">Contact</a>
+		<a href="news.html" data-role="button">News</a>
+		<a href="privacy-policy.html" data-role="button">Privacy Policy</a>
+		<a href="settings.html" data-role="button">Settings</a>  
+		<a href="logout.html" data-role="button">Logout</a> 
+</div>
+</div>
+<!-- FC MENU-->
+<div data-role="panel" id="fcMenu" data-theme="d">
+	<div data-role="controlgroup">		
+		
+	</div>
+</div>
+<div data-role="header" data-position="fixed"> 
+<div data-role="popup" id="popupMenu" data-theme="d">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+            <li data-role="divider" data-theme="e">Choose an action</li>
+			<li><a href="about.html" onclick="takePhoto();">Upload from camera</a></li>
+			<li><a href="messages.html" onclick="takePhotoFromLibrary();">Upload from memory</a></li>
+        </ul>
+</div>
+<div align="center">
+	<img src="images/logo-white.png" width="150" height="65"/>
+</div>
+<div align="center">     
+ <div class="menu-wrapper">
+  <ul class="menu">
+	<a href="status.html"><span aria-hidden="true" class="icon-home"></span></a>
+	<a href="uploads.html"><span aria-hidden="true" class="icon-images"></span></a>
+	<a href="#popupMenu" data-rel="popup" data-transition="slideup" ><img src="images/fc-icon.png" width="70" height="70"/></a>
+	<a href="profile.html"><span aria-hidden="true" class="icon-user"></span></a>
+	<a href="store.html"><span aria-hidden="true" class="icon-cart"></span></a>
+	<a href="uploads.html"><span aria-hidden="true" class="icon-search" style="position:absolute; top:10px; left: 75%;"></span></a>
+	<a href="#panelMenu"><span aria-hidden="true" class="icon-list" style="position:absolute; top:10px; left: 85%;"></span></a>
+  </ul>
+  </div>
+</div>
+<!-- /navbar --> 
+</div>
+<!-- /header -->
 
   
   <div data-role="content">

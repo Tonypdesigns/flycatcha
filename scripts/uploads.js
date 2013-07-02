@@ -3,7 +3,6 @@ $(document).ready(function () {
 	var thumbnail;
 	var title;
 	var photo = "";
-	
 	//RETREIVE RECENT UPLOADED PHOTOS
 	$.ajax({
 		  url: "http://flycatcha.com/rest/uploads",
@@ -21,12 +20,9 @@ $(document).ready(function () {
 				image = data.nodes[i].node.image;
 				thumbnail = data.nodes[i].node.thumbnail;
 				title = data.nodes[i].node.title;
-				photo += '<li><a href="'+image+'"><div class="photo"><img src="'+thumbnail+'" alt="'+title+'"/></a></div></li>';
+				photo += '<li><a href="'+image+'" rel="external"><img src="'+thumbnail+'" alt="'+title+'"/></a></li>';
 			}//End for loop
-			//alert(photo); 
 			$('#Gallery').append(photo);
 		}//End success
 	});//END RETREIVE RECENT UPLOADED PHOTOS	
-
-
 });

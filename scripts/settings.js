@@ -18,7 +18,7 @@ $(document).ready(function () {
 	  },
 	  success: function (data) {
 		uid = data.user.uid;
-		alert(data.user.uid);
+		//alert(data.user.uid);
 		curr_name = data.user.name;
 		curr_mail = data.user.mail;
 	}

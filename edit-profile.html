@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>FlyCatcha.com</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css">
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+<link rel="stylesheet" href="style.css">
+<script type="text/javascript" charset="utf-8" src="cordova-2.6.0.js"></script>
+<script type="text/javascript" charset="utf-8" src="scripts/camera.js"></script>
+<script src="scripts/file-transfer.js"></script>
+<link rel="stylesheet" type="text/css" href="css/flycatcha.min.css"/>
+	</head>
+	<body>
+
+<!-- HEADER -->
+<div data-role="page" id="login">
+<script src="scripts/login.js"></script>
+<!-- MAIN MENU -->
+<div data-role="panel" id="panelMenu" data-theme="d" data-position="right">
+<div data-role="controlgroup">		
+		<a href="about.html" data-role="button">About</a>
+		<a href="messages.html" data-role="button">Messages</a>
+		<a href="members.html" data-role="button">Members</a>
+		<a href="friends.html" data-role="button">Friends</a>
+		<a href="mailto:contactus@flycatcha.com" data-role="button">Contact</a>
+		<a href="news.html" data-role="button">News</a>
+		<a href="privacy-policy.html" data-role="button">Privacy Policy</a>
+		<a href="settings.html" data-role="button">Settings</a>  
+		<a href="logout.html" data-role="button">Logout</a> 
+</div>
+</div>
+<!-- FC MENU-->
+<div data-role="panel" id="fcMenu" data-theme="d">
+	<div data-role="controlgroup">		
+		
+	</div>
+</div>
+<div data-role="header" data-position="fixed"> 
+<div data-role="popup" id="popupMenu" data-theme="d">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+            <li data-role="divider" data-theme="e">Choose an action</li>
+			<li><a href="about.html" onclick="takePhoto();">Upload from camera</a></li>
+			<li><a href="messages.html" onclick="takePhotoFromLibrary();">Upload from memory</a></li>
+        </ul>
+</div>
+<div align="center">
+	<img src="images/logo-white.png" width="150" height="65"/>
+</div>
+<div align="center">     
+ <div class="menu-wrapper">
+  <ul class="menu">
+	<a href="status.html"><span aria-hidden="true" class="icon-home"></span></a>
+	<a href="uploads.html"><span aria-hidden="true" class="icon-images"></span></a>
+	<a href="#popupMenu" data-rel="popup" data-transition="slideup" ><img src="images/fc-icon.png" width="70" height="70"/></a>
+	<a href="profile.html"><span aria-hidden="true" class="icon-user"></span></a>
+	<a href="store.html"><span aria-hidden="true" class="icon-cart"></span></a>
+	<a href="uploads.html"><span aria-hidden="true" class="icon-search" style="position:absolute; top:10px; left: 75%;"></span></a>
+	<a href="#panelMenu"><span aria-hidden="true" class="icon-list" style="position:absolute; top:10px; left: 85%;"></span></a>
+  </ul>
+  </div>
+</div>
+<!-- /navbar --> 
+</div>
+<!-- /header -->
+
+			<div data-role="content">
+				<label for="text-basic">Comment:</label>
+				<textarea cols="40" rows="30" name="textarea-1" id="comment_post"></textarea>
+				<a href="#" data-role="button" data-theme="a" class="comment">Post Status</a>
+				
+				<h2>Comments:</h2>
+				<p>This was a great post</p>
+				<p>June 15, 2013 06:52 AM</p>
+				<p>I really liked this post</p>
+				<p>June 15, 2013 06:52 AM</p>
+			</div>
+			<!-- /content -->
+
+			<div data-role="footer">
+				<h4>Copyright &copy; 2013 FlyCatcha</h4>
+			</div>
+			<!-- /footer -->
+		</div>
+		<!-- /page -->
+
+	</body>
+</html>

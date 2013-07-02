@@ -50,15 +50,11 @@ $(document).ready(function () {
 			 var ampm = hour >= 12 ? 'PM' : 'AM';
 			 var formatted_date = month+' '+date+', '+year+' '+hour+':'+minutes+" "+ampm;
 			$("<hr><h2>"+value.subject+"</h2><p>"+formatted_date+"</p>"+
-			//"<a href='#' id='"+value.thread_id+"' class='reply'>Reply</a> | "+
-			"<a href='#' id='"+value.thread_id+"' class='delete-message'>Delete</a><br>").appendTo('.messages');
+			"<div class='message-actions'><a href='#' id='"+value.thread_id+"' class='reply'>Reply</a>"+
+			"<a href='#' id='"+value.thread_id+"' class='delete-message'>Delete</a></div><br>").appendTo('.messages');
 		});//End loop
 		}//End success
 	}); //End ajax call
-	
-	
-
-	
 	
 	// DELETE MESSAGE
 	$('.delete-message').click(function(){
@@ -84,8 +80,4 @@ $(document).ready(function () {
 			}); //End ajax call
 		}//End if statement
 	});//End delete
-	
-	
-	
-	
 });//End document ready
