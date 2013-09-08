@@ -12,85 +12,85 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
 	<body>
-		<div class='app'>
-			<div data-role="page">
-				<div data-role="panel" id="panelMenu" data-theme="b" data-position="right" data-display="push">
-					<div data-role="controlgroup">
-						<a href="about.html" data-role="button" data-theme="b">About</a>
-						<a href="messages.html" data-role="button" data-theme="b" >Messages</a>
-						<a href="members.html" data-role="button" data-theme="b">Members</a>
-						<a href="friends" data-role="button" data-theme="b">Friends</a>
-						<a href="mailto:contact@flycatcha.com" data-role="button" data-theme="b" >Contact</a>
-						<a href="{news_url}" data-role="button" data-theme="b" >News</a>
-						<a href="privacy-policy.html" data-role="button" data-theme="b">Privacy Policy</a>
-						<a href="settings.html" data-role="button" data-theme="b">Settings</a>
-						<a href="logout.html" data-role="button" data-theme="b" >Logout</a>
-					</div>
-				</div>
-				<div data-role="panel" id="fcMenu" data-theme="d">
-					<div data-role="controlgroup"></div>
-				</div>
-				<div data-role="header" data-position="fixed">
-					<div data-role="popup" id="popupMenu" data-theme="d">
-						<ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
-							<li data-role="divider" data-theme="d">
-								Choose an action
-							</li>
-							<li>
-								<a href="" onclick="takePhoto();" data-theme="d">Upload from camera</a>
-							</li>
-							<li>
-								<a href="" onclick="takePhotoFromLibrary();" data-theme="d">Upload from memory</a>
-							</li>
-						</ul>
-					</div>
-					<div align="center">
-						<a href="index.html" ><img src="img/logo-white.png" width="150" height="65"/></a>
-					</div>
-					<div data-role="navbar" id="navbar">
-						<ul>
-							<li>
-								<a class="home" href="status.html" data-ajax="none" data-theme="b" ><span aria-hidden="true" class="icon-home"></span></a>
-							</li>
-							<li>
-								<a class="uploads" href="uploads.html" data-theme="b"><span aria-hidden="true" class="icon-images"></span></a>
-							</li>
-							<li>
-								<a class="fc" href="#popupMenu" data-rel="popup" data-theme="b"><img class="logo" src="img/fc-icon.png" width="50" height="50"/></a>
-							</li>
-							<li>
-								<a class="profile" href="#" data-theme="b" ><span aria-hidden="true" class="icon-user"></span></a>
-							</li>
-							<li>
-								<a class="store" href="#" data-theme="b" ><span aria-hidden="true" class="icon-cart"></span></a>
-							</li>
-						</ul>
-						<div align="right" class="ui-btn-right">
-							<a class="search" href="search.html"  data-role="none" data-theme="c"><span aria-hidden="true" class="icon-search" data-role="none"></span></a>
-							<a class="menu" href="#panelMenu" data-role="none" data-theme="c"><span aria-hidden="true" class="icon-list" data-role="none"></span></a>
-						</div>
-					</div>
-				</div>
-				<div data-role="content">
-					<form>
-						<label for="username">Username:</label>
-						<input type="text" name="username" id="username" value="">
-
-						<label for="password">Password:</label>
-						<input type="password" name="password" id="password" value="">
-
-						<a href="#" data-role="button" data-theme="a" class="login">Login</a>
-						<a href="register.html" data-role="button" data-theme="a" data-ajax="false">Register new account</a>
-					</form>
-				</div>
-				<div data-role="footer" data-position="fixed">
-					<h4>Copyright &copy; 2013 FlyCatcha</h4>
+		<div data-role="page">
+			<!-- MAIN MENU -->
+			<div data-role="panel" id="panelMenu" data-theme="b" data-position="right" data-display="push">
+				<div data-role="controlgroup">
+					<a href="about.html" data-role="button" data-theme="b">About</a>
+					<a href="messages.html" data-role="button" data-theme="b">Messages</a>
+					<a href="members.html" data-role="button" data-theme="b">Members</a>
+					<a href="friends.html" data-role="button" data-theme="b">Friends</a>
+					<a href="mailto:contactus@flycatcha.com" data-role="button" data-theme="b">Contact</a>
+					<a href="news.html" data-role="button" data-theme="b">News</a>
+					<a href="privacy-policy.html" data-role="button" data-theme="b">Privacy Policy</a>
+					<a href="settings.html" data-role="button" data-theme="b">Settings</a>
+					<a href="logout.html" data-role="button" data-theme="b">Logout</a>
 				</div>
 			</div>
-		</div>
+			<!-- FC MENU-->
+			<div data-role="panel" id="fcMenu" data-theme="d">
+				<div data-role="controlgroup"></div>
+			</div>
+			<div data-role="header" data-position="fixed">
+				<div data-role="popup" id="popupMenu" data-theme="d">
+					<ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+						<li data-role="divider" data-theme="d">
+							Choose an action
+						</li>
+						<li>
+							<a href="about.html" onclick="takePhoto();" data-theme="d">Upload from camera</a>
+						</li>
+						<li>
+							<a href="messages.html" onclick="takePhotoFromLibrary();" data-theme="d">Upload from memory</a>
+						</li>
+					</ul>
+				</div>
+				<div align="center">
+					<a href="index.html"><img src="img/logo-white.png" width="150" height="65"/></a>
+				</div>
+				<!-- /navbar -->
+				<div data-role="navbar">
+					<ul>
+						<li>
+							<a href="status.html" data-ajax="none" data-theme="b"><span aria-hidden="true" class="icon-home"></span></a>
+						</li>
+						<li>
+							<a href="uploads.html" data-theme="b"><span aria-hidden="true" class="icon-images"></span></a>
+						</li>
+						<li>
+							<a href="#popupMenu" data-theme="b" data-rel="popup" data-transition="slideup" ><img class='logo' src="img/fc-icon.png" width="70" height="70"/></a>
+						</li>
+						<li>
+							<a href="profile.html" data-theme="b"><span aria-hidden="true" class="icon-user"></span></a>
+						</li>
+						<li>
+							<a href="store.html" data-theme="b"><span aria-hidden="true" class="icon-cart"></span></a>
+						</li>
+					</ul>
+					<div  align="right" class="ui-btn-right">
+						<a href="search.html" data-ajax="false" data-role="none" data-theme="c"> <span aria-hidden="true" class="icon-search" data-role="none"></span></a>
+						<a href="#panelMenu" data-role="none" data-theme="c"> <span aria-hidden="true" class="icon-list" data-role="none"></span></a>
+					</div>
+				</div><!-- /navbar -->
+			</div>
+			<!-- /header -->
+			<div data-role="content">
+				<form>
+					<label for="username">Username:</label>
+					<input type="text" name="username" id="username" value="">
+
+					<label for="password">Password:</label>
+					<input type="password" name="password" id="password" value="">
+
+					<a href="#" data-role="button" data-theme="a" class="login">Login</a>
+					<a href="register.html" data-role="button" data-theme="a" data-ajax="false">Register new account</a>
+				</form>
+			</div>
+			<div data-role="footer" data-position="fixed">
+				<h4>Copyright &copy; 2013 FlyCatcha</h4>
+			</div>		
 		<!-- SCRIPTS  -->
-		<script type="text/javascript" src="js/mustache.js"></script>
-		<script type="text/javascript" src="js/template.js"></script>
+		<script type="text/javascript" src="js/phonegap.js"></script>
 		<script type="text/javascript" src="js/login.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>
 		<script type="text/javascript">
