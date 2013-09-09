@@ -13,76 +13,103 @@
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
 	</head>
-<body>
-<!-- HEADER -->
-<div data-role="page" id="login">
-<script src="scripts/notification.js"></script>
-<script src="scripts/main.js"></script>
-<!-- MAIN MENU -->
-<div data-role="panel" id="panelMenu" data-theme="b" data-position="right" data-display="push">
-<div data-role="controlgroup">		
-		<a href="about.html" data-role="button" data-theme="b">About</a>
-		<a href="messages.html" data-role="button" data-theme="b">Messages</a>
-		<a href="members.html" data-role="button" data-theme="b">Members</a>
-		<a href="friends.html" data-role="button" data-theme="b">Friends</a>
-		<a href="mailto:contactus@flycatcha.com" data-role="button" data-theme="b">Contact</a>
-		<a href="news.html" data-role="button" data-theme="b">News</a>
-		<a href="privacy-policy.html" data-role="button" data-theme="b">Privacy Policy</a>
-		<a href="settings.html" data-role="button" data-theme="b">Settings</a>  
-		<a href="logout.html" data-role="button" data-theme="b">Logout</a> 
-</div>
-</div>
-<!-- FC MENU-->
-<div data-role="header" data-position="fixed"> 
-<div data-role="popup" id="popupMenu" data-theme="b">
-        <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="b">
-            <li data-role="divider" data-theme="b">Choose an action</li>
-			<li><a href="about.html" onclick="takePhoto();" data-theme="b">Upload from camera</a></li>
-			<li><a href="messages.html" onclick="takePhotoFromLibrary();" data-theme="b">Upload from memory</a></li>
-        </ul>
-</div>
-<div align="center">
-	<a href="index.html"><img src="images/logo-white.png" width="150" height="65"/></a>
-</div>
-<div align="center">     
- <div class="menu-wrapper">
-  <ul class="menu">
-	<a href="status.html"><span aria-hidden="true" class="icon-home"></span></a>
-	<a href="uploads.html"><span aria-hidden="true" class="icon-images"></span></a>
-	<a href="#popupMenu" data-rel="popup" data-transition="slideup" ><img class='logo' src="images/fc-icon.png" width="70" height="70"/></a>
-	<a href="profile.html"><span aria-hidden="true" class="icon-user"></span></a>
-	<a href="store.html"><span aria-hidden="true" class="icon-cart"></span></a>
-	<a href="search.html" data-ajax="false"><span aria-hidden="true" class="icon-search" style="position:absolute; top:10px; left: 75%;"></span></a>
-	<a href="#panelMenu"><span aria-hidden="true" class="icon-list" style="position:absolute; top:10px; left: 85%;"></span></a>
-  </ul>
-  </div>
-</div>
-<!-- /navbar --> 
-</div>
-<!-- /header -->	
-<div data-role="content">
-	<h1 class="page-title">Notifications</h1>
-	<div class="message-thread-wrapper">
-		<h2>Messages</h2>
-		<div class="message-thread"></div>
-	</div>
-	<hr>
-	<div class="friends-thread-wrapper">
-		<h2>Friends</h2>
-		<div class="friends-thread"></div>
-	</div>
-	<hr>
-	<div class="comments-thread-wrapper">
-		<h2>Comments</h2>
-		<div class="comments-thread"></div>
-	</div>
-</div>
-<!-- /content -->
-<div data-role="footer">
-	<h4>Copyright &copy; 2013 FlyCatcha</h4>
-</div>
-<!-- /footer --> 
-</div>
-<!-- /page --> 
-</body>
+	<body>
+		<!-- HEADER -->
+		<div data-role="page" id="login">
+			<!-- MAIN MENU -->
+			<div data-role="panel" id="panelMenu" data-theme="b" data-position="right" data-display="push">
+				<div data-role="controlgroup">
+					<a href="about.html" data-role="button" data-theme="b">About</a>
+					<a href="messages.html" data-role="button" data-theme="b">Messages</a>
+					<a href="members.html" data-role="button" data-theme="b">Members</a>
+					<a href="friends.html" data-role="button" data-theme="b">Friends</a>
+					<a href="mailto:contactus@flycatcha.com" data-role="button" data-theme="b">Contact</a>
+					<a href="news.html" data-role="button" data-theme="b">News</a>
+					<a href="privacy-policy.html" data-role="button" data-theme="b">Privacy Policy</a>
+					<a href="settings.html" data-role="button" data-theme="b">Settings</a>
+					<a href="logout.html" data-role="button" data-theme="b">Logout</a>
+				</div>
+			</div>
+			<!-- FC MENU-->
+			<div data-role="panel" id="fcMenu" data-theme="d">
+				<div data-role="controlgroup"></div>
+			</div>
+			<div data-role="header" data-position="fixed">
+				<div data-role="popup" id="popupMenu" data-theme="d">
+					<ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+						<li data-role="divider" data-theme="d">
+							Choose an action
+						</li>
+						<li>
+							<a href="about.html" onclick="takePhoto();" data-theme="d">Upload from camera</a>
+						</li>
+						<li>
+							<a href="messages.html" onclick="takePhotoFromLibrary();" data-theme="d">Upload from memory</a>
+						</li>
+					</ul>
+				</div>
+				<div align="center">
+					<a href="index.html"><img src="img/logo-white.png" width="150" height="65"/></a>
+				</div>
+				<!-- /navbar -->
+				<div data-role="navbar">
+					<ul>
+						<li>
+							<a href="status" data-ajax="none" data-theme="b"><span aria-hidden="true" class="icon-home"></span></a>
+						</li>
+						<li>
+							<a href="uploads.html" data-theme="b"><span aria-hidden="true" class="icon-images"></span></a>
+						</li>
+						<li>
+							<a href="#popupMenu" data-theme="b" data-rel="popup" data-transition="slideup" ><img class='logo' src="img/fc-icon.png" width="70" height="70"/></a>
+						</li>
+						<li>
+							<a href="profile.html" data-theme="b"><span aria-hidden="true" class="icon-user"></span></a>
+						</li>
+						<li>
+							<a href="store.html" data-theme="b"><span aria-hidden="true" class="icon-cart"></span></a>
+						</li>
+					</ul>
+					<div  align="right" class="ui-btn-right">
+						<a href="search.html" data-ajax="false" data-role="none" data-theme="c"> <span aria-hidden="true" class="icon-search" data-role="none"></span></a>
+						<a href="#panelMenu" data-role="none" data-theme="c"> <span aria-hidden="true" class="icon-list" data-role="none"></span></a>
+					</div>
+				</div><!-- /navbar -->
+			</div>
+			<!-- /header -->
+			<div data-role="content">
+				<h1 class="page-title">Notifications</h1>
+				<div class="message-thread-wrapper">
+					<h2>Messages</h2>
+					<div class="message-thread"></div>
+				</div>
+				<hr>
+				<div class="friends-thread-wrapper">
+					<h2>Friends</h2>
+					<div class="friends-thread"></div>
+				</div>
+				<hr>
+				<div class="comments-thread-wrapper">
+					<h2>Comments</h2>
+					<div class="comments-thread"></div>
+				</div>
+			</div>
+			<!-- /content -->
+			<div data-role="footer">
+				<h4>Copyright &copy; 2013 FlyCatcha</h4>
+			</div>
+			<!-- /footer -->
+			<!-- SCRIPTS  -->
+		<script type="text/javascript" src="js/notification.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/phonegap.js"></script>
+		<script type="text/javascript" src="js/login.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript">
+			app.initialize();
+		</script>
+		<!-- SCRIPTS -->
+		</div>
+		<!-- /page -->
+	</body>
 </html>
