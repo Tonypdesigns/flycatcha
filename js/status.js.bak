@@ -21,7 +21,7 @@ $(document).ready(function () {
 	
 	//STORE USER SESSION	
 	$.ajax({
-		  url: "http://flycatcha.com/rest/system/connect",
+		  url: "../rest/system/connect",
 		  type: 'post',
 		  dataType: 'json',
 		  async: false,
@@ -44,7 +44,7 @@ $(document).ready(function () {
 	$.ajax({
 			async: false,
 			type: "get",
-			url: "http://flycatcha.com/rest/status/",
+			url: "../rest/status/",
 			error: function(XMLHttpRequest, textStatus, errorThrown) {
 				alert(errorThrown);
 				console.log(JSON.stringify(XMLHttpRequest));
@@ -105,7 +105,7 @@ $(document).ready(function () {
 	// LOAD AUTHOR INFORMATION
 	for (var i = 0; i < author_id.length; i++) {
 	$.ajax({
-			url: "http://flycatcha.com/rest/user/"+author_id[i],
+			url: "../rest/user/"+author_id[i],
 			type: 'get',
 			dataType: 'json',
 			async: false,
@@ -118,9 +118,9 @@ $(document).ready(function () {
 			success: function (data) {	
 				console.log(data);
 				if(data.picture)
-					profile_picture = '<img src="http://flycatcha.com/sites/default/files/pictures/'+data.picture.filename+'" width="75"/>';
+					profile_picture = '<img src="../sites/default/files/pictures/'+data.picture.filename+'" width="75"/>';
 				else	
-					profile_picture = '<img src="http://flycatcha.com/sites/default/files/pictures/default-fallback-user-photo.png" width="75"/>';
+					profile_picture = '<img src="../sites/default/files/pictures/default-fallback-user-photo.png" width="75"/>';
 				$('.author-'+i).append('<div class="author">@'+data.name+'</div>');
 				$('.author-img-'+i).append(profile_picture);
 			}//End success
@@ -132,7 +132,7 @@ $(document).ready(function () {
 	/*LOAD FLYCATCHAS*/
 	for (var i = 0; i < node.length; i++) {
 	$.ajax({
-			url: "http://flycatcha.com/rest/flag/countall.json",
+			url: "../rest/flag/countall.json",
 			type: 'post',
 			dataType: 'json',
 			data: 'flag_name=flycatcha&content_id='+node[i],
@@ -158,7 +158,7 @@ $(document).ready(function () {
 	/*LOAD FLYPOINTS*/
 	for (var i = 0; i < node.length; i++) {
 	$.ajax({
-			url: "http://flycatcha.com/rest/flag/countall.json",
+			url: "../rest/flag/countall.json",
 			type: 'post',
 			dataType: 'json',
 			data: 'flag_name=flypoint&content_id='+node[i],
@@ -184,7 +184,7 @@ $(document).ready(function () {
 	// LOAD AUTHOR INFORMATION
 	for (var i = 0; i < status_count; i++) {
 	$.ajax({
-			url: "http://flycatcha.com/rest/user/"+author_id[i],
+			url: "../rest/user/"+author_id[i],
 			type: 'get',
 			dataType: 'json',
 			async: false,
@@ -196,7 +196,7 @@ $(document).ready(function () {
 			},
 			success: function (data) {	
 				console.log(data);
-				/* profile_picture = '<img src="http://flycatcha.com/sites/default/files/pictures/'+data.picture.filename+'" width="75"/>';
+				/* profile_picture = '<img src="../sites/default/files/pictures/'+data.picture.filename+'" width="75"/>';
 				$('#post-'+i).prepend('<div class="author_img">'+profile_picture+data.name+'<br>@'+data.name+'</div>'); */
 			}//End success
 	}); //End ajax call
@@ -210,7 +210,7 @@ $(document).ready(function () {
 		var post_id = $(this).attr('id');
 		if(confirm("Are you sure you would like to delete this status update")){
 		$.ajax({
-		  url: "http://flycatcha.com/rest/node/"+post_id,
+		  url: "../rest/node/"+post_id,
 		  type: 'delete',
 		  dataType: 'json',
 		  async: false,
@@ -235,7 +235,7 @@ $(document).ready(function () {
 		var status = $("#status_update").val();
 		if(!status){alert('Please enter status'); return false;}
 			$.ajax({
-			  url: "http://flycatcha.com/rest/node.json",
+			  url: "../rest/node.json",
 			  type: 'post',
 			  data: 'node[type]=status&node[title]=' + encodeURIComponent(status) + '&node[language]=und&node[body][und][0][value]=' + encodeURIComponent(status),
 			  dataType: 'json',
@@ -259,8 +259,8 @@ $(document).ready(function () {
 		var like_id = $(this).attr('id');
 		$.ajax({
 			type: "POST",
-			//url: "http://flycatcha.com/rest/userpoints/add",
-			url: "http://flycatcha.com/rest/flag/flag.json",
+			//url: "../rest/userpoints/add",
+			url: "../rest/flag/flag.json",
 			data: 'flag_name=like&content_id='+like_id+'&action=flag&uid='+uid+'&skip_permission_check=true',
 			error: function(XMLHttpRequest, textStatus, errorThrown) {
 				alert(errorThrown);
@@ -289,7 +289,7 @@ $(document).ready(function () {
 				// single click code
 				$.ajax({
 					type: "POST",
-					url: "http://flycatcha.com/rest/flag/flag.json",
+					url: "../rest/flag/flag.json",
 					data: 'flag_name=flypoint&content_id='+fly_id+'&action=flag&uid='+uid+'&skip_permission_check=true',
 					error: function(XMLHttpRequest, textStatus, errorThrown) {
 						alert(errorThrown);
@@ -313,7 +313,7 @@ $(document).ready(function () {
 			 $(this).css( "color", "GoldenRod" );
 			 $.ajax({
 				type: "POST",
-				url: "http://flycatcha.com/rest/flag/flag.json",
+				url: "../rest/flag/flag.json",
 				data: 'flag_name=flycatcha&content_id='+fly_id+'&action=flag&uid='+uid+'&skip_permission_check=true',
 				error: function(XMLHttpRequest, textStatus, errorThrown) {
 					alert(errorThrown);
@@ -341,7 +341,7 @@ $(document).ready(function () {
 		$('.flag-content').click(function(){
 		$.ajax({
 			type: "POST",
-			url: "http://flycatcha.com/rest/flag/flag.json",
+			url: "../rest/flag/flag.json",
 			data: 'flag_name=bad_content&content_id='+report_id+'&action=flag&uid='+uid+'&skip_permission_check=true',
 			error: function(XMLHttpRequest, textStatus, errorThrown) {
 				alert(errorThrown);
@@ -361,7 +361,7 @@ $(document).ready(function () {
 		$('.flag-user').click(function(){
 		$.ajax({
 			type: "POST",
-			url: "http://flycatcha.com/rest/flag/flag.json",
+			url: "../rest/flag/flag.json",
 			data: 'flag_name=bad_user&content_id='+report_id+'&action=flag&uid='+uid+'&skip_permission_check=true',
 			error: function(XMLHttpRequest, textStatus, errorThrown) {
 				alert(errorThrown);
@@ -384,8 +384,8 @@ $(document).ready(function () {
 		var content_id = $(this).attr('id');
 		$.ajax({
 			type: "POST",
-			//url: "http://flycatcha.com/rest/userpoints/add",
-			url: "http://flycatcha.com/rest/flag/flag.json",
+			//url: "../rest/userpoints/add",
+			url: "../rest/flag/flag.json",
 			data: 'flag_name=bad_content&content_id='+content_id+'&action=flag&uid='+uid+'&skip_permission_check=true',
 			error: function(XMLHttpRequest, textStatus, errorThrown) {
 				alert(errorThrown);
