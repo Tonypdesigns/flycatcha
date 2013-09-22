@@ -38,10 +38,10 @@
 							Choose an action
 						</li>
 						<li>
-							<a href="about.html" onclick="takePhoto();" data-theme="d">Upload from camera</a>
+							<a href="#" onclick="takePhoto();" data-theme="d">Upload from camera</a>
 						</li>
 						<li>
-							<a href="messages.html" onclick="takePhotoFromLibrary();" data-theme="d">Upload from memory</a>
+							<a href="#" onclick="takePhotoFromLibrary();" data-theme="d">Upload from memory</a>
 						</li>
 					</ul>
 				</div>
@@ -75,6 +75,7 @@
 			</div>
 			<!-- /header -->
 			<div data-role="content">
+			test
 				<form>
 					<label for="username">Username:</label>
 					<input type="text" name="username" id="username" value="">
