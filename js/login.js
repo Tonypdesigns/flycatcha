@@ -22,10 +22,9 @@ $(document).ready(function () {
 			console.log(JSON.stringify(errorThrown));
 			},
 			success: function(data){
-				console.log(data);
+				//console.log(data);
 				alert( "Logged in as: " + data.user.name );
 				$.mobile.changePage("status.html", "slideup");
-				//window.location.href="status.html";
 			},
 		});
 	});//End login btn
