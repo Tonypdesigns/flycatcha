@@ -1,393 +1,190 @@
-@charset "utf-8";
+body{
 
-/* CSS Document */
-body, p{
-	font-family: Arial;
-}
-hr{border: 1px solid #ccc}
-.logo{
-	width: 45px;
-	height: 45px;
-}
-#navlist {
-	position: relative;
-	height: 35px;
-}
-#navlist li {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	position: relative;
-	top: 0;
-}
-#navlist li, #navlist a {
-	height: 44px;
-	display: block;
+  background-color: black;
+  padding-top: 90px;
+  color: white;
 }
 
-#home {
-	left: 0px;
-	width: 46px;
-}
-#home {
-	background: url('img/mobile-nav.png') 0 0;
-}
-
-#prev {
-	left: 63px;
-	width: 43px;
-}
-#prev {
-	background: url('img/mobile-nav.png') -47px 0;
+#login{
+  background: url('../images/fc-bg.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-#next {
-	left: 129px;
-	width: 43px;
-}
-#next {
-	background: url('/mobile-nav.png') -91px 0;
+.bg-default{
+  background: black;
 }
 
-/* UI */
-.ui-footer, .ui-header {
-	background: black
+.fc-login-logo{
+  margin-top: 30px;
 }
 
-/*FRIENDS LIST*/	
-.friends .friend {
-	width: 50%;
-	height: 100px;
-	padding: 5px;
-	border: 1px solid #ccc;
-	text-align: center;
-	font-weight: bold;
-	text-transform: capitalize;
+.fc-login-box, .fc-settings-box, .user-list{
+  background: url('../images/overlay-black.png');
+  border: 1px solid red;
+  margin-top: 10px;
+  color: white;
+  padding: 30px;
+  border-radius: 5px;
 }
 
-/*UPLOADS*/
-.gallery li a {
-	border: none !important;
-	margin: 1px !important; 
+.user-list{
+  text-align: center;
 }
 
-/*PROFILE*/
-.profile {
-	background-size: 100% 100%;
-	min-height: 450px;
-	width: 100%;
-	padding-top: 30px;
-	margin-bottom: 30px;
-}
-.profile h2 {
-	text-transform: uppercase;
-	color: red;
-	line-height: 5px;
-}
-.profile-image{
-	display:inline-block;
-	width: 40%; 
-}
-.profile-info {
-	width: 50%;
-	display: inline-block;
-	vertical-align: top;	
-}
-.username{
-	text-transform:uppercase;
-	font-weight: bold;
-}
-.country{
-	text-transform:uppercase;
-}
-.user-data{
-	border: 1px solid black;
-	display: inline-block;
-	padding: 5px;
-	margin: 10px 0 10px 0;
-}
-.edit-profile{
-	margin-left: 10px;
-}
-.uploads img, .top-friends img{
-	display:inline;
-	margin-right: 10px;
-	border: 1px solid #ff000;
-	border-radius: 10px;
-}
-.uploads, .top-friends{
-	width: 100%;
-	overflow:auto;
-	overflow-y: hidden;
-	white-space: nowrap;
-	margin-top: 10px;
-}
-/* #ribbon {
-	position: absolute;
-	z-index: 1;
-	margin-top: 30px;
-	left: -10px;			
-}
-#ribbon img {
-	height: 600px;
-	width: 40px;
-}
- */
- .friend-name {
-	font-size: small;
-	padding: 5px;
-	font-weight: bold;
+.header, .dropdown-menu, .status, .profile-info, .profile{
+    background: url('../images/dark-overlay.png');
 }
 
-.user-points {
-	font-size: medium;
-	font-weight: bold;
-	vertical-align: middle;
+.header-btn{
+  cursor: pointer;
 }
 
-.user-points span {
-	vertical-align: top;
-	line-height: 75px;
+/*NAVBAR*/
+.navbar td{
+  padding: 5px;
 }
 
-/*MENU*/
-.menu-wrapper{
-	background-color:#c10404;
-}
-.menu {
-	margin: 10px 0 0 0; 
-	padding-bottom: 1px;
-	padding-left: 0;
-	height: 45px;
-}
-.menu li {
-	list-style: none;
-	float: left;
-	font-size: 24px;
-	font-weight: normal;
-	padding: 10px 0px;
-	display: table-cell;
-	width: 16.6%;
-}
-.menu a{
-	color: white !important;
-	text-decoration:none;
-	font-weight: normal;
-}
-.menu a:hover{
-	color: black !important;
-	text-decoration: none;
-	font-weight: normal;
-	margin: 0; 
-	padding: 0;
+.navbar .dropdown-menu{
+  margin-top: 22px;
+  margin-left: -10px;
+  border-radius: 0;
 }
 
-/*POPUP*/
-.ui-popup {
-position: relative;
-top: 80px; 
-/*left: 50%*/
+.dropdown-menu li a{
+  background:none;
+  color: white;
 }
 
-/*TYPICONS*/
-@font-face {
-  font-family: 'typicons';
-  src: url("typicons20/font/typicons.eot");
-  src: url("typicons20/font/typicons.eot?#iefix") format('embedded-opentype'),
-       url("typicons20/font/typicons.woff") format('woff'),
-       url("typicons20/font/typicons.ttf") format('truetype'),
-       url("typicons20/font/typicons.svg#typicons") format('svg');
-  font-weight: normal;	
-  font-style: normal;
-}
-
-.ui-btn-icon-right > .ui-btn-inner > .ui-icon {
-	position: absolute;
-	top: 50%;
-	margin-top: -9px;
-	display: none;
-}
-
-/*ICON MOON*/
-@font-face {
-	font-family: 'icomoon';
-	src:url('fonts/icomoon.eot');
-	src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
-		url('fonts/icomoon.woff') format('woff'),
-		url('fonts/icomoon.ttf') format('truetype'),
-		url('fonts/icomoon.svg#icomoon') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-
-/* Use the following CSS code if you want to use data attributes for inserting your icons */
-/*[data-icon]:before {
-	font-family: 'icomoon';
-	content: attr(data-icon);
-	speak: none;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-}
-
-/* Use the following CSS code if you want to have a class per icon */
-/*
-Instead of a list of all class selectors,
-you can use the generic selector below, but it's slower:
-[class*="icon-"] {
-*/
-.ui-btn-inner {
-	border:none !important;
-}
-
-.icon-camera, .icon-cart, .icon-user, .icon-images, .icon-home{
-	/* position: relative; */
-	/* top: -22px;  */
-	/* top: 5px; */
-	margin-top: 8px;
-}  
-a .icon-search, a .icon-list{
-	color: gold;
-	font-size: small;
-}
-
-
-.icon-cart, .icon-user, .icon-list, .icon-home, .icon-images, .icon-search, .icon-camera, .icon-spinner, .icon-heart, .icon-thumbs-up, .icon-thumbs-up-2, .icon-envelop, .icon-remove, .icon-reply, .icon-bubble, .icon-dot-dot-dot, .icon-bubble, .icon-bubbles, .icon-bubbles-2, .icon-dot-dot-dot, .icon-fc-logo {
-	font-family: 'icomoon';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-	font-size: 30px;  
-	/* width: 15%; */
-	display: inline-block;
-}
-.icon-cart:before {
-	content: "\e000";
-}
-.icon-user:before {
-	content: "\e001";
-}
-.icon-home:before {
-	content: "\e003";
-}
-.icon-images:before {
-	content: "\e004";
-}
-.icon-search:before {
-	content: "\e005";
-}
-.icon-camera:before {
-	content: "\e006";
-}
-.icon-spinner:before {
-	content: "\e007";
-}
-.icon-heart:before {
-	content: "\e008";
-}
-.icon-thumbs-up:before {
-	content: "\e009";
-}
-.icon-thumbs-up-2:before {
-	content: "\e00a";
-}
-.icon-envelop:before {
-	content: "\e00b";
-}
-.icon-remove:before {
-	content: "\e00c";
-}
-.icon-reply:before {
-	content: "\e00d";
-}
-.icon-bubble:before {
-	content: "\e00e";
-}
-.icon-bubbles:before {
-	content: "\e00f";
-}
-.icon-bubbles-2:before {
-	content: "\e010";
-}
-.icon-dot-dot-dot:before {
-	content: "\e011";
-}
-.icon-fc-logo:before {
-	content: "\e012";
-}
-.icon-list:before {
-	content: "\e002";
-}
-.icon-menu:before {
-	content: "\e013";
-}
-.icon-fc:before {
-	background-image: url("/fc-icon.png");
-	background-size: 30px 20px;
-}
-
-
-
-/*LINKS*/
-.post a{color:black; text-decoration: none; font-weight: normal;}
-.post a:hover{color:red; font-weight: normal;}
-
-.message-actions a{
-	font-size: 24px; margin-right: 15px;
-}
-.status a{
-	color: black;
-}
-
-a:hover .icon-spinner, a:hover .icon-search, a:hover .icon-list{
-	color:red !important;
-}
-
-a .icon-camera, a .icon-cart, a .icon-user, a .icon-images, a .icon-home{
-	/* border-right: 1px solid gold; */
-}
-
-/*PANEL*/
- #panelMenu, #fcMenu {
-	background: black;
-} 
-
-.ui-content {
-border-width: 0;
-overflow: visible;
-overflow-x: hidden;
-padding: 15px;
-background: white;
+.dropdown-menu li a:hover{
+  background:none;
+  color: red;
 }
 
 /*STATUS*/
-.status-btns a{font-size: medium !important; text-decoration: none !important; color:black; text-decoration: none; font-weight: normal;}
-.status-btns .txt{font-family: arial !important;}
-.status-btns a:hover{color:#C10404 !important; text-decoration:none !important; color:red; font-weight: normal;}
-.status-btns a {width: 150px !important;}
-
-
-
-
-/*FC ICON*/
-.fc.icon-fc-logo{font-size: 48px !important; color: grey}
-.fc{
-		background-image: url("/fc-icon.png");
-		background-size: 30px 20px;
-		width: 30px;
-		height: 25px;
-		display:block;
+.status{
+  color: white;
+  border-spacing: 10px;
+  border-collapse: separate;
+  width: 100%;
 }
 
-.ui-navbar li .ui-btn .ui-btn-inner {
-padding-top: 0 !important;
-padding-bottom: 0 !important;
-height: 50px; 
+/*PROFILE*/
+.profile-spacer{
+  height: 370px;
+  display: block;
+}
+.profile-image{
+  background: url('../images/placeholders/profile-placeholder.jpg') no-repeat top center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: black;
+}
+
+.profile-info{
+  color: white;
+  border-radius: 0px 0px 0px 20px;
+  position: absolute;
+  right:0;
+  top: 84px;
+  padding: 15px;
+}
+
+.profile{
+  position: relative;
+  bottom:0;
+  left: 0px;
+  background: url('../images/dark-overlay.png');
+  width: 100%;
+}
+
+.profile .btn{
+  background: none;
+  border: 1px solid darkred;
+  color: darkred;
+}
+
+.profile .btn:hover{
+  background: none;
+  background-color: darkred;
+  border: 1px solid darkred;
+  color: black;
+}
+
+.photo-posts{
+  border-collapse: collapse;
+  border-spacing: 200px;
+}
+
+.photo-posts td{
+  border-spacing: 10px;
+  border-collapse: separate;
+}
+
+.photo-posts img{
+  border-radius: 100px;
+  padding: 15px;
+}
+
+
+/*EXPLORE*/
+.explore-grid .row{
+  padding-bottom: 5px;
+  padding-left: 0;
+  padding-right: 5px;
+}
+
+.explore-grid .col-xs-4 {
+  padding: 0 1px 0 5px;
+}
+
+/*FRIENDS*/
+.users{
+  padding-bottom: 30px;
+  padding-top: 30px;
+  border-bottom: 1px solid red;
+}
+
+
+
+img.invert
+{
+  filter: invert(1);
+  -webkit-filter: invert(1);
+  -moz-filter: invert(1);
+  -o-filter: invert(1);
+  -ms-filter: invert(1);
+}
+
+
+img.sephia
+{
+  filter: sepia(1);
+  -webkit-filter: sepia(1);
+  -moz-filter: sepia(1);
+  -o-filter: sepia(1);
+  -ms-filter: sepia(1);
+}
+
+img.grayscale
+{
+  filter: grayscale(1);
+  -webkit-filter: grayscale(1);
+  -moz-filter: grayscale(1);
+  -o-filter: grayscale(1);
+  -ms-filter: grayscale(1);
+}
+
+.filters{
+  padding-top: 30px;
+  background: black;
+  color: red;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: large;
+
 }
