@@ -1,7 +1,6 @@
 body{
-
   background-color: black;
-  padding-top: 90px;
+  padding-top: 55px;
   color: white;
 }
 
@@ -9,8 +8,17 @@ body{
   margin-top: 10%;
 }
 
+i{
+  margin-left: 5px !important;
+  margin-right: 5px !important;
+}
+
 .red{
   color: red;
+}
+
+.action-btn{
+  width:100%;
 }
 
 .authorName{
@@ -118,7 +126,7 @@ body{
   width: 100%;
 }
 
-.profile .btn{
+.profile .btn, .status .btn{
   background: none;
   border: 1px solid darkred;
   color: darkred;

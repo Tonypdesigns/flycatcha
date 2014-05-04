@@ -8,6 +8,7 @@
 
     <!-- Bootstrap -->
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
     <link href="css/style.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -18,13 +19,12 @@
     <![endif]-->
   </head>
   <body>
+    <!-- HEADER -->
     <nav class="navbar navbar-fixed-top header" role="navigation">
-      <table width="100%">
-        <tr>
-          <td width="25%">
-            <!-- Single button -->
-            <div class="btn-group">
-              <img src="images/icons/main-menu.png" width="40" class="header-btn" data-toggle="dropdown">
+      <div class="row">
+        <div class="col-xs-2">
+          <div class="btn-group">
+              <img src="images/icons/main-menu.png" width="30" class="header-btn" data-toggle="dropdown">
               <ul class="dropdown-menu" role="menu">
                 <li><a href="profile.html"><img src="images/icons/profile.png" width="40"/> Profile</a></li>
                 <li><a href="#"><img src="images/icons/search.png" width="40"/> Search</a></li>
@@ -32,16 +32,14 @@
                 <li><a href="settings.html"><img src="images/icons/settings.png" width="40"/> Settings</a></li>
               </ul>
             </div>
-          </td>
-        <td width="50%"><div align="center"><img src="images/fc-small.png" align="center"/></div></td>
-        <td width="25%"><img src="images/icons/fc-icon.png" width="50" align="right"></td>
-        </tr>
-      </table>
+        </div>
+        <div class="col-xs-8"><img src="images/fc-small.png" class="center-block" width="100"/></div>
+        <div class="col-xs-2"><img src="images/icons/fc-icon.png" width="30" class="pull-right"></div>
+      </div>
     </nav>
     <!-- Content Feed -->
     <div id="loader"><img src="images/ajax-loader.gif" class="center center-block"/></div>
-    <div id="feed" class="container-fluid">
-    </div>
+    <div id="feed" class="container-fluid"></div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

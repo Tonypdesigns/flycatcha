@@ -17,6 +17,16 @@ $(function(){
         },
         success: function (data){
           console.log(data);
+          postStatusBtn =
+          '<div class="btn-group btn-group-justified">'
+          +'<div class="btn-group">'
+          +'<button type="button" class="btn btn-danger"><i class="fa fa-pencil-square-o"></i>Status</button>'
+          +'</div>'
+          +'<div class="btn-group">'
+          +'<button type="button" class="btn btn-danger"><i class="fa fa-camera"></i>Photo</button>'
+          +'</div>'
+          +'</div>';
+          $('#feed').append(postStatusBtn);
           $.each(data.nodes,function(key, value){
             openRow = "<div class='row status-post'>";
             closeRow = "</div>";

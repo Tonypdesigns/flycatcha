@@ -1,4 +1,5 @@
 $(function() {
+  $.support.cors = true;
   //Initialize password protected headers
   $.ajaxSetup({
     headers: {
