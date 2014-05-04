@@ -5,6 +5,18 @@ body{
   color: white;
 }
 
+#loader{
+  margin-top: 10%;
+}
+
+.red{
+  color: red;
+}
+
+.authorName{
+  text-transform: uppercase;
+}
+
 #login{
   background: url('../images/fc-bg.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -69,6 +81,10 @@ body{
   border-spacing: 10px;
   border-collapse: separate;
   width: 100%;
+}
+
+.status-post{
+  padding: 10px 0 10px 0;
 }
 
 /*PROFILE*/
