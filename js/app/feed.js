@@ -20,10 +20,10 @@ $(function(){
           postStatusBtn =
           '<div class="btn-group btn-group-justified">'
           +'<div class="btn-group">'
-          +'<button type="button" class="btn btn-danger"><i class="fa fa-pencil-square-o"></i>Status</button>'
+          +'<a hef="create-status.html" class="btn btn-danger"><i class="fa fa-pencil-square-o"></i>Status</a>'
           +'</div>'
           +'<div class="btn-group">'
-          +'<button type="button" class="btn btn-danger"><i class="fa fa-camera"></i>Photo</button>'
+          +'<a href="#" class="btn btn-danger"><i class="fa fa-camera"></i>Photo</a>'
           +'</div>'
           +'</div>';
           $('#feed').append(postStatusBtn);
@@ -40,7 +40,7 @@ $(function(){
             replyBtn = "<img src='images/icons/reply.png' width='30' class='pull-right'/>";
             menuBtn = "<img src='images/icons/menu.png' width='30' class='pull-right'/></div>";
             image = value.node.image ? "<div class='col-xs-12 status-post'><img src='"+value.node.image+"' class='img-responsive' width='100%'/></div>" : '';
-            if(image){description = "<div class='col-xs-9 text-justify'>"+description+"</div>"; body="";}
+            if(image){description = "<div class='col-xs-12 text-justify'>"+description+"</div>"; body="";}
             else{body = "<div class='col-xs-12 text-justify'>"+body+"</div>"; description = ''}
             //Gather author information - profile name and image
             $.ajax({
@@ -51,13 +51,15 @@ $(function(){
                 //Load author data
                 var fileFolder = "http://flycatcha.com/drupal/sites/default/files/pictures/";
                 authorThumb = (data.picture) ? fileFolder+data.picture.filename : '';
-                authorThumb = (data.picture) ? "<div class='col-xs-2'><img src='"+authorThumb+"' width='100%'/></div>" : '';
+                authorThumb = (data.picture) ? "<div class='col-xs-3'><img src='"+authorThumb+"' width='100%' class='img-responsive'/></div>" : '';
                 authorName = data.name;
-                authorName = "<div class='col-xs-2 red authorName'>"+authorName+"</div>";
+                authorName = "<div class='col-xs-3 red authorName'>"+authorName+"</div>";
                 //Print feed data
                 $('#feed').append(
                   openRow
                   +image
+                  +closeRow
+                  +openRow
                   +body
                   +authorThumb
                   +authorName
